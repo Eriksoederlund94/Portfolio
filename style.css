@@ -29,7 +29,7 @@
 
 body,html {
   height: 100%;
-  font-size: 16px;
+  font-size: 14px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -43,22 +43,18 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.125em;
+  text-align: center;
   line-height: 1.6;
-  color: #2e3241;
-  background: #ddd;
   background-size: 400%;
   background-image: var(--gradient);
-  animation: bg-animation 60s infinite alternate;
-  text-align: center;
+  animation: bg-animation 60s infinite alternate ;
 }
-
 
 section.welcome-text h1 {
   font-size: 6rem;
 }
 
-section.welcome-text  {
+section.welcome-text p {
   font-size: 2rem;
 }
 
@@ -85,32 +81,32 @@ nav ul{
 
 ul a {
   text-decoration: none;
-  color: #FFF;
+  color: #fbf4ea;
   border-bottom: 2px transparent rgba(0,0,0,0.1);
 }
 
 ul a:hover {
-  border-bottom: 2px solid #FFF;
+  border-bottom: 2px solid #fbf4ea;
 }
  /* Nav */
 
- main, nav, footer {
+main, nav, footer {
    font-family: 'Roboto', sans-serif;
- }
+}
 
- .grid-container {
-   display: grid;
-   gap: 1rem;
-   grid-template-columns: repeat(4,1fr);
-   grid-template-rows: repeat(6,1fr);
-   grid-template-areas:
-   "about-header about-header about-header about-header"
-   " . about-image about-text . "
-   "education-header education-header education-header education-header"
-   ". education-text jensen . "
-   "contact-header contact-header contact-header contact-header"
-   " . github linkedin . "
-   ;
+.grid-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(6,1fr);
+  grid-template-areas:
+  "about-header about-header about-header about-header"
+  " . about-image about-text . "
+  "education-header education-header education-header education-header"
+  ". education-text jensen . "
+  "contact-header contact-header contact-header contact-header"
+  " . github linkedin . "
+  ;
  } 
 
 .paragraf {
@@ -124,100 +120,109 @@ ul a:hover {
   margin-bottom: 10px;
 }
 
- section.about-header {
-   grid-area: about-header;
-   background: url(./img/wavestop.svg) no-repeat;
- }
+section.about-header {
+  grid-area: about-header;
+  background: url(./img/wavestop.svg) no-repeat;
+  background-size: contain;
+}
 
- .section-header {
-   border-bottom: 2px solid rgba(0,0,0,0.5);
- }
+.section-header {
+  border-bottom: 2px solid rgba(0,0,0,0.5);
+}
 
- section.about-image {
-   grid-area: about-image;
- }
+section.about-image {
+  grid-area: about-image;
+}
 
- .about-image img {
+.about-image img {
   max-width: 100%;
   height: auto;
   border-radius: 2px;
   filter: drop-shadow(0px 5px 3px #000);
 } 
 
- section.flex {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-  }
+section.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  section.flex h1 {
-    text-transform: uppercase;
-    font-weight: bolder;
-    font-size: 3rem;
-    color: #2e3241;
-  }
+section.flex h1 {
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 3rem;
+  color: #2e3241;
+}
 
- section.about-text {
-   grid-area: about-text;
-   flex-direction: column;
-   font-size: 1rem;
+ /* About Text */
+
+section.about-text {
+  grid-area: about-text;
+  flex-direction: column;
+  font-size: 1rem;
+ }
+ 
+section.education-header {
+  grid-area: education-header;
+  margin-top: 5rem;
  }
 
- section.education-header {
-   grid-area: education-header;
-   margin-top: 5rem;
- }
+section.education-text {
+  grid-area: education-text;
+  flex-direction: column;
+  font-size: 1rem
+}
 
- section.education-text {
-   grid-area: education-text;
-   flex-direction: column;
-   font-size: 1rem
+ /* Jensen */
+
+section.jensen {
+  grid-area: jensen;
+}
+
+/* Jensen-Card */
+
+.jensen-flip-card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.jensen-flip-card:hover {
+  transform: rotateY(180deg);
+}
+
+.jensen-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
 
-  section.jensen {
-    grid-area: jensen;
-  }
+.jensen-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-color: #FFF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #2e3241;
+}
 
-  .jensen-flip-card {
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: all 1s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  /* Button */
 
-  .jensen-flip-card:hover {
-    transform: rotateY(180deg);
-  }
-
-  .jensen-front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .jensen-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    background-color: #FFF;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #2e3241;
-  }
-
-  .btn {
+.btn {
   display: inline-block;
   border-radius: 4px;
   background-color: #2e3241;
@@ -257,48 +262,48 @@ ul a:hover {
   right: 0;
 }
 
-.margin {
+  /* Button */
+
+.jensen-text {
   margin-bottom: 10px;
 }
 
-  section.contact-header {
-   grid-area: contact-header;
-   margin-top: 10rem;
+ /* Contact */
+
+section.contact-header {
+  grid-area: contact-header;
+  margin-top: 10rem;
+}
+
+section.github {
+  grid-area: github;
+}
+
+section.linkedin {
+grid-area: linkedin;
   }
 
-  section.github {
-    grid-area: github;
+  /* Footer */
+
+footer {
+  background-color: #2e3241;
+  color: #fbf4ea;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
-  section.github img:hover {
-    width: 15vh;
-  }
+  /* Media querys */
 
-  section.linkedin {
-    grid-area: linkedin;
-  }
-
-    section.linkedin img:hover {
-    width: 15vh;
-  }
-
-  footer {
-    background-color: #2e3241;
-    color: #FFF;
-    height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1250px) {
   .grid-container {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 120px 1fr 1fr 100px 1fr 250px 100px 1fr;
     grid-template-areas:
-    " about-header  about-header about-header about-header  "
+    "about-header about-header about-header about-header"
     " . about-image about-image . "
     " . about-text about-text ."
     " education-header education-header education-header education-header "
@@ -318,6 +323,18 @@ ul a:hover {
     font-size: 14px;
   }
   html {
-    font-size: 12px;
+    font-size: 11px;
   }
 }
+
+@media screen and (min-width: 1250px) {
+  section.linkedin img:hover {
+    width: 15vh;
+  }
+  
+  section.github img:hover {
+    width: 15vh;
+  }
+}
+
+   
