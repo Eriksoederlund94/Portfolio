@@ -145,8 +145,6 @@ section.flex h1 {
 
 section.about-header {
   grid-area: about;
-  background: url(./img/wavestop.svg) no-repeat;
-  background-size: contain;
 }
 
 .section-header {
@@ -428,5 +426,9 @@ footer {
   }
   section.github img:hover {
     width: 15vh;
+  }
+  section.about-header {
+    background: url(./img/wavestop.svg) no-repeat;
+    background-size: contain;
   }
 }
