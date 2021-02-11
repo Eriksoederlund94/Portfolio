@@ -217,6 +217,10 @@ section.jensen {
   align-items: center;
   }
 
+.jensen-front img {
+
+}
+
 .jensen-back {
   position: absolute;
   width: 100%;
@@ -409,7 +413,7 @@ footer {
     font-size: 14px;
   }
    .jensen-back {
-    width: 120%;
+    width: 375px;
   } 
   .card-width {
     margin: 0 auto;
